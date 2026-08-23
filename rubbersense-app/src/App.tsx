@@ -1,10 +1,23 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ComponentType } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import PhoneFrame from './components/PhoneFrame';
 import WelcomePage from './pages/WelcomePage';
 import HomeScreen from './pages/HomeScreen';
+import PlantHealthScreen from './pages/PlantHealthScreen';
+import SmokehouseFlow from './pages/SmokehouseFlow';
+import LatexScreen from './pages/LatexScreen';
+import MoistureScreen from './pages/MoistureScreen';
 import PlaceholderScreen from './pages/PlaceholderScreen';
 import { FEATURES } from './data/features';
+
+// Features that already have a real, dedicated screen (rather than the
+// generic "coming soon" placeholder).
+const BUILT_SCREENS: Record<string, ComponentType> = {
+  '/plant-health': PlantHealthScreen,
+  '/smokehouse': SmokehouseFlow,
+  '/latex': LatexScreen,
+  '/moisture': MoistureScreen,
+};
 
 // Native mock-up size (matches PhoneFrame's fixed 375x812 dimensions).
 const PHONE_W = 375;
@@ -60,13 +73,16 @@ function App() {
             <Routes>
               <Route path="/" element={<WelcomePage />} />
               <Route path="/home" element={<HomeScreen />} />
-              {FEATURES.map((f) => (
-                <Route
-                  key={f.path}
-                  path={f.path}
-                  element={<PlaceholderScreen feature={f} />}
-                />
-              ))}
+              {FEATURES.map((f) => {
+                const Built = BUILT_SCREENS[f.path];
+                return (
+                  <Route
+                    key={f.path}
+                    path={f.path}
+                    element={Built ? <Built /> : <PlaceholderScreen feature={f} />}
+                  />
+                );
+              })}
             </Routes>
           </PhoneFrame>
         </div>

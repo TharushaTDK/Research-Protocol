@@ -12,7 +12,7 @@ export default function PlaceholderScreen({ feature }: PlaceholderScreenProps) {
 
   return (
     <div className="flex h-full w-full flex-col bg-brand-50">
-      <div className="flex items-center gap-3 px-5 pb-4 pt-5">
+      <div className="flex items-center gap-3 px-5 pb-4 pt-9">
         <button
           type="button"
           onClick={() => navigate('/home')}

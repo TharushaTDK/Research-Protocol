@@ -36,7 +36,7 @@ export default function WelcomePage() {
           RubberSense
         </h1>
         <p className="mt-1.5 text-sm font-medium uppercase tracking-[0.2em] text-brand-100">
-          Sense. Predict. Improve.
+          Natural. Smart. Sustainable.
         </p>
 
         <p className="mt-6 max-w-65 text-[15px] leading-relaxed text-brand-50/90">

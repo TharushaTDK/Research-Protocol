@@ -14,6 +14,7 @@ import {
   BatteryFull,
 } from 'lucide-react';
 import { FEATURES } from '../data/features';
+import logo from '../assets/logo-icon.png';
 
 const INSIGHTS = [
   {
@@ -55,16 +56,25 @@ export default function HomeScreen() {
 
         {/* Greeting */}
         <div className="relative z-10 mt-3 flex items-center justify-between px-6">
-          <div>
-            <p className="text-[13px] font-medium text-brand-100">
-              Good Morning &#128075;
-            </p>
-            <h1 className="mt-0.5 text-xl font-bold text-white">
-              Nimal&apos;s Estate
-            </h1>
-            <div className="mt-1 flex items-center gap-1 text-[12px] text-brand-100">
-              <MapPin className="h-3 w-3" />
-              <span>Kalutara, Sri Lanka</span>
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/95 p-1.5 shadow-sm">
+              <img
+                src={logo}
+                alt="RubberSense"
+                className="h-full w-full rounded-xl object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-[13px] font-medium text-brand-100">
+                Good Morning &#128075;
+              </p>
+              <h1 className="mt-0.5 text-xl font-bold text-white">
+                Nimal&apos;s Estate
+              </h1>
+              <div className="mt-1 flex items-center gap-1 text-[12px] text-brand-100">
+                <MapPin className="h-3 w-3" />
+                <span>Kalutara, Sri Lanka</span>
+              </div>
             </div>
           </div>
           <button
