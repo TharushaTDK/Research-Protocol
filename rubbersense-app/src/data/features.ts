@@ -28,10 +28,10 @@ export const FEATURES: Feature[] = [
   },
   {
     path: '/moisture',
-    title: "How's the Moisture",
-    subtitle: 'Acoustic sheet quality test',
+    title: 'Moisture Check',
+    subtitle: 'Acoustic moisture assessment for processed rubber sheets',
     description:
-      'Tap a rubber sheet and let the acoustic thud-test estimate its moisture and quality in seconds.',
+      'IoT-based acoustic moisture prediction for processed rubber sheets using ESP32 node and standard tapping tool.',
     icon: Droplets,
   },
   {
